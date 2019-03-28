@@ -32,7 +32,7 @@
       <!-- windows phone 点击无高光 -->
       <meta name="msapplication-tap-highlight" content="no">
       <title>数字键盘</title>
-      <link rel="stylesheet" type="text/css" href="../../css/mobilereset.css" />
+      <link rel="stylesheet" type="text/css" href="./mobilereset.css" />
       <link rel="stylesheet" type="text/css" href="./keyboard.css">
       <script type="text/javascript">
        !function(n){
@@ -50,9 +50,10 @@
             e.addEventListener("DOMContentLoaded",a,!1))
         }(window);
       </script>
-      <style>
+      <style> 
+        html,body{ width: 100%; height: 100%; }
         .test{
-          padding: 40px;
+          padding: 40px; height: 100%; box-sizing: border-box;
         }
         .money-p{
           width: 260px; height: 50px; border: 1px solid #ccc;
@@ -75,9 +76,14 @@
         h3{
           font-size: 16px; margin: 15px;
         }
+        .ttshow{
+          position: fixed; left: 0; top: 10px; z-index: 10;
+          font-size: 14px;
+        }
       </style>
   </head>
   <body>
+    <div class="ttshow" id="ttshow"></div>
     <div class="test">
       <!-- pattern="\d*"  digit -->
       <h3>金额键盘</h3>
@@ -96,12 +102,13 @@
           console.log(m);
         }
 
-        var keyboardObj = new appKeyboard({
+        var keyboardObjNum = new appKeyboard({
           trigger: 'number',
           hidePoint: true
         }, onmoveend);
 
-      }
+        
+      } 
     </script>
   </body>
 </html>        

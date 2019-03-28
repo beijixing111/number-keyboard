@@ -18,6 +18,8 @@
   appKeyboard.prototype = {
     init: function(e) {
       var _this = this;
+      var _body = document.querySelector('body');
+      _body.style.cursor = "pointer";
       var trigger = document.getElementById(this.trigger);
       trigger.setAttribute("readonly", "readonly");
       trigger.setAttribute("unselectable", "on");
@@ -28,8 +30,7 @@
         // e.preventDefault();
         e.stopPropagation();
         _this.value = this.value;
-        _this.show();
-        // if()
+        _this.show(); 
         var cursor = document.querySelector('#' + _this.trigger + '_cursor');
         // console.log(cursor);
         if (!cursor) {
@@ -141,6 +142,8 @@
 
       document.addEventListener('click', function(e) {
         _this.hideKeyboardPanel();
+        console.log(12333);
+        document.querySelector('.ttshow').innerHTML = 1233;
         var cursorAll = document.querySelectorAll('.ipt-cursor');
         cursorAll.forEach(function(item) {
           item.style.display = 'none';
