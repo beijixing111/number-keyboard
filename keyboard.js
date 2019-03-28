@@ -141,9 +141,7 @@
       }
 
       document.addEventListener('click', function(e) {
-        _this.hideKeyboardPanel();
-        console.log(12333);
-        document.querySelector('.ttshow').innerHTML = 1233;
+        _this.hideKeyboardPanel();  
         var cursorAll = document.querySelectorAll('.ipt-cursor');
         cursorAll.forEach(function(item) {
           item.style.display = 'none';
